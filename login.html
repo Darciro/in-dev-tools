@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Integer Dev Tools</title>
+</head>
+<body>
+
+<nav class="navbar sticky-top navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand">Integer Dev Tools</a>
+    </div>
+</nav>
+
+<main class="container-fluid">
+    <div class="row justify-content-center align-items-center mt-5">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <form id="auth-form">
+                        <div class="mb-3">
+                            <label for="email-integer" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email-integer" aria-describedby="email-help">
+                            <div id="email-help" class="form-text">Teu email corporativo da integer</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="personal-token" class="form-label">Token pessoal</label>
+                            <input type="text" class="form-control" id="personal-token" aria-describedby="email-help-2">
+                            <div id="email-help-2" class="form-text">Token de acesso pessoal, obtido através do <a href="https://dev.azure.com/integer-consulting/_usersSettings/tokens">Azure DevOps</a></div>
+                        </div>
+                        <div class="mb-3 text-end">
+                            <button type="button" id="auth-button" class="btn btn-primary">Autenticar</button>
+                        </div>
+                        <div id="error-feedback" class="invalid-feedback text-center">
+                            Não foi possível conectar à API com os dados fornceidos, por favor certfique-se de que os campos estão corretos.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script defer src="./renderer.js"></script>
+</body>
+</html>

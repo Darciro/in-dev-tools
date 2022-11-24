@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Integer Dev Tools</title>
+</head>
+<body>
+
+<nav class="navbar sticky-top navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand">Integer Dev Tools</a>
+        <form class="d-flex" role="search">
+            <input id="project-search" class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+        </form>
+    </div>
+</nav>
+
+<main class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Devilbox</h5>
+                    <p class="card-text">Inicializar os serviços padrões da devilbox, com os módulos: PHP, MySQL e Httpd</p>
+                    <button id="start-devilbox" class="btn btn-primary">Inicializar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">PhpStorm</h5>
+                    <p class="card-text">Inicializa a IDE preferencial para edição de códigos PHP</p>
+                    <a href="#" class="btn btn-primary">Inicializar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Folha de Horas</h5>
+                    <p class="card-text">Clique no botão para ir diretamente à folha de horas da Intranet</p>
+                    <a href="#" class="btn btn-primary">Inicializar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="accordion accordion-flush my-4 border" id="projects-accordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="template-item-heading">
+                        <button class="accordion-button border-bottom fw-bold"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#template-item-collapse"
+                                aria-expanded="true"
+                                aria-controls="template-item-collapse">
+                            Accordion Item #1
+                        </button>
+                    </h2>
+                    <div id="template-item-collapse" class="accordion-collapse collapse" aria-labelledby="template-item-heading" data-bs-parent="#projects-accordion">
+                        <div class="accordion-body">
+                            <p class="desc"></p>
+                            <div class="list-group mb-4">
+                                <a href="#" target="_blank" class="project-link list-group-item list-group-item-action">Aceder ao projeto</a>
+                                <a href="#" target="_blank" class="repo-link list-group-item list-group-item-action">Repositório</a>
+                                <a href="#" target="_blank" class="backlog-link list-group-item list-group-item-action">Backlog</a>
+                                <a href="#" target="_blank" class="wiki-link list-group-item list-group-item-action">Documentação</a>
+                            </div>
+                            <p class="text-end">
+                                <a href="#" class="card-lin me-3 open-ide d-none" data-ide-target="" data-ide="vscode">Abrir com VSCode</a>
+                                <a href="#" class="card-lin me-3 open-ide d-none" data-ide-target="" data-ide="phpstorm">Abrir com Phpstorm</a>
+                                <a href="#" class="card-link modal-anchor" data-bs-toggle="modal" data-bs-target="#custom-panel-template-item">Personalizar</a>
+                            </p>
+
+                            <div class="modal" id="custom-panel-template-item" tabindex="-1">
+                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Links personalizados</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table table-custom-data table-hover table-stripe mb-4">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Nome</th>
+                                                    <th scope="col">URL</th>
+                                                    <th scope="col">
+                                                        <span class="visually-hidden">Ações</span>
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="row-template d-none">
+                                                    <th scope="row">
+                                                        <span></span>
+                                                        <input type="text" class="form-control custom-name-input" placeholder="Título do link">
+                                                    </th>
+                                                    <td>
+                                                        <span></span>
+                                                        <input type="text" class="form-control custom-url-input" placeholder="https://">
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <button type="button" class="delete-custom-data btn btn-danger btn-sm">Excluir</button>
+                                                        <button type="button" class="edit-custom-data btn btn-warning btn-sm">Editar</button>
+
+                                                        <button type="button" class="cancel-custom-data btn btn-secondary btn-sm">Cancelar</button>
+                                                        <button type="button" class="save-custom-data btn btn-success btn-sm">Salvar</button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <th scope="col" colspan="3" class="text-end">
+                                                        <p class="float-start fw-light text-muted mt-2 mb-0"><small>Use <b>local-path</b> para adicionar o caminho local para o projeto</small></p>
+                                                        <button type="button" class="add-custom-data btn btn-primary" data-table-id="#">Adicionar</button>
+                                                    </th>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script defer src="./renderer.js"></script>
+</body>
+</html>

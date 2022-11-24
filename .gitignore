@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+.htaccess
+node_modules
+public/*
+!public/.gitkeep
+out/
+release-builds/

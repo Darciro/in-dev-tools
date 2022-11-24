@@ -1,0 +1,59 @@
+body {
+    background-color: #252423;
+}
+
+.navbar {
+    padding: 0.75rem 0;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%), inset 0 -1px 0 rgb(0 0 0 / 15%);
+}
+
+.navbar.bg-dark {
+    background-color: #201f1e !important;
+    border-bottom: 1px solid #ffffff2e;
+}
+
+#project-search {
+    background-color: #201f1e !important;
+    border-bottom: 1px solid #ffffff2e;
+    color: #fff;
+}
+
+.card {
+    background-color: #323130;
+    box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, .132), 0 0.6px 1.8px 0 rgba(0, 0, 0, .108);
+    border-radius: 4px;
+    color: #fff;
+}
+
+.accordion-button {
+    background-color: #323130 !important;
+    color: #fff !important;
+}
+
+.accordion-body {
+    background-color: #cecece !important;
+}
+
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after{
+    background: none;
+}
+
+.table-custom-data tr .form-control,
+.table-custom-data tr .save-custom-data,
+.table-custom-data tr .cancel-custom-data,
+.table-custom-data tr.active span,
+.table-custom-data tr.active .delete-custom-data,
+.table-custom-data tr.active .edit-custom-data{
+    display: none;
+}
+
+.table-custom-data tr.active .form-control,
+.table-custom-data tr.active .save-custom-data,
+.table-custom-data tr.active .cancel-custom-data {
+    display: inline-block;
+}
+
+.table .form-control {
+    padding: 0.16rem 0.75rem;
+}
